@@ -17,12 +17,12 @@ var app = new Vue({
             this.startTime = new Date();
         },
         getRandomSentence: function () {
-            let magicNumber = math.floor(math.random()*SENTENCES.length);
+            let magicNumber = Math.floor(Math.random()*SENTENCES.length);
             this.sentence = SENTENCES[magicNumber];
         },
         calculateTotalTime: function () {
             let temp = new Date();
-            this.finTime = temp - this.startTime();
+            this.finTime = temp - this.startTime;
             
         },
         resetTest: function () {
