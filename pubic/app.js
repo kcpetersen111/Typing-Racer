@@ -46,7 +46,11 @@ var app = new Vue({
             } else {
                 return false;
             }
-        }
+        },
+        wordsPerMin:function(){
+            let temp = this.sentence.split(" ");
+            return (temp.length/this.finTime)*60;
+        },
     },
     created: function () {
         this.getRandomSentence();
