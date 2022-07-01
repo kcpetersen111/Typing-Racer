@@ -49,7 +49,7 @@ var app = new Vue({
         },
         wordsPerMin:function(){
             let temp = this.sentence.split(" ");
-            return (temp.length/this.finTime)*60;
+            return (Math.floor(((temp.length/this.finTime)*60)*1000))/1000;
         },
     },
     created: function () {
