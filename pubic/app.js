@@ -27,10 +27,12 @@ var app = new Vue({
         },
         resetTest: function () {
             this.finTime = "";
+            this.input = "";
         },
         resetWithNewSentence: function () {
             this.finTime = "";
             this.getRandomSentence();
+            this.input = "";
         }
     },
     computed: {
