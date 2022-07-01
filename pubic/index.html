@@ -7,7 +7,7 @@
     <div id="app">
         <h1>Typing Test</h1>
         <h3>{{sentence}}</h3><br>
-        <input v-model="input" @keydown.once="startRace()" v-bind:disabled="finishedTyping" style="width: 25rem;"><br><br>
+        <input v-model="input" @keydown="startRace()" v-bind:disabled="finishedTyping" style="width: 25rem;"><br><br>
         <div v-if="finishedTyping" >It took you: {{finTime}}s
             <br><br>
             <button v-on:click="resetTest()">Reset Test with same sentence</button>

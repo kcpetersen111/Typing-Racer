@@ -11,10 +11,14 @@ var app = new Vue({
         input:"",
         startTime:"",
         finTime:"",
+        started:false,
     },
     methods:{
         startRace: function () {
-            this.startTime = new Date();
+            if(!this.started){
+                this.startTime = new Date();
+                this.started = true;
+            }
         },
         getRandomSentence: function () {
             let magicNumber = Math.floor(Math.random()*SENTENCES.length);
