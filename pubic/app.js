@@ -7,13 +7,23 @@ const SENTENCES = [
 var app = new Vue({
     el: "#app",
     data:{
+        sentence:"",
+        input:"",
+        startTime:"",
+        finTime:"",
     },
     methods:{
         startRace: function () {
+            this.startTime = new Date();
         },
         getRandomSentence: function () {
+            let magicNumber = math.floor(math.random()*SENTENCES.length);
+            this.sentence = SENTENCES[magicNumber];
         },
         calculateTotalTime: function () {
+            let temp = new Date();
+            this.finTime = temp - this.startTime();
+            
         },
         resetTest: function () {
         },
