@@ -1,53 +1,45 @@
-/*
-// Example quiz object might look like:
-var QUIZ = [
-    {
-        title: "Question 1",
-        questionText: "What is the 3rd letter in the alphabet?",
-        answers: [
-            {text: "a", correct: false},
-            {text: "b", correct: false},
-            {text: "c", correct: true},
-            {text: "d", correct: false}
-        ],
-        userAnswer: ""
-    },
-    {
-        title: "Question 2",
-        questionText: "How many licks to the center of a tootsie pop?",
-        answers: [
-            {text: "3", correct: true},
-            {text: "682", correct: false},
-            {text: "841", correct: false},
-            {text: "1000", correct: false},
-        ],
-        userAnswer: ""
-    }
+const SENTENCES = [
+    "The quick brown fox jumped over the fence.",
+    "It's been over a fence, I'm starting to think that tractor is never coming back.",
+    "What do you believe to be the answer to my problems?",
 ]
-*/
-
-
 
 var app = new Vue({
     el: "#app",
     data:{
-        // to attach your global quiz variable to a data variable:
-        // myQuiz: QUIZ,
     },
     methods:{
-        // used for showing questions individually
-        nextQuestion : function () {},
-
-        // used for showing questions individually
-        previousQuestion : function () {},
-
-        setPage: function (page) {},
-        
-        calculateScore: function () {}
+        startRace: function () {
+        },
+        getRandomSentence: function () {
+        },
+        calculateTotalTime: function () {
+        },
+        resetTest: function () {
+        },
+        resetWithNewSentence: function () {
+        }
     },
     computed: {
-        // a function that returns true if 0 userAnswer fields are blank ("")
-        // IF there is still 1 or more blank ("") userAnswer field, return false
-        areAllQuestionsAnswered: function () {}
+        // this function runs whenever the sentence the user is typing changes
+        // use it like a variable (v-if="finishedTyping")
+        finishedTyping: function () {
+            // you probably wanna use your variable here in place of these awful ones
+            if (this.SENTENCE_TO_BE_TYPED == this.SENTENCE_USER_IS_TYPING) {
+                this.calculateTotalTime();
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    created: function () {
     }
 });
+
+/*
+extra cool additions:
+ - Keep a high score that stays between attempts
+ - Let the user pick the sentence that they will be typing
+ - Show a timer on the screen as they are typing
+*/
