@@ -6,6 +6,10 @@
 <body>
     <div id="app">
         <h1>Typing Test</h1>
+        <h3>{{sentence}}</h3><br>
+        <input v-model="input" placeholder="{{sentence}}"><br>
+        <div v-if="done == true">{{time}}</div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="app.js"></script>
