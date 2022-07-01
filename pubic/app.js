@@ -26,8 +26,11 @@ var app = new Vue({
             
         },
         resetTest: function () {
+            this.finTime = "";
         },
         resetWithNewSentence: function () {
+            this.finTime = "";
+            this.getRandomSentence();
         }
     },
     computed: {
@@ -35,7 +38,7 @@ var app = new Vue({
         // use it like a variable (v-if="finishedTyping")
         finishedTyping: function () {
             // you probably wanna use your variable here in place of these awful ones
-            if (this.SENTENCE_TO_BE_TYPED == this.SENTENCE_USER_IS_TYPING) {
+            if (this.sentence == this.input) {
                 this.calculateTotalTime();
                 return true;
             } else {
@@ -44,6 +47,8 @@ var app = new Vue({
         }
     },
     created: function () {
+        this.getRandomSentence();
+
     }
 });
 
