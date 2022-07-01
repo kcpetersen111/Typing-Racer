@@ -7,7 +7,7 @@
     <div id="app">
         <h1>Typing Test</h1>
         <h3>{{sentence}}</h3><br>
-        <input v-model="input"><br>
+        <input v-model="input" @click="startRace()"><br>
         <div v-if="finishedTyping">{{finTime}}</div>
 
     </div>

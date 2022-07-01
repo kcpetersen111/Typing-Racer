@@ -22,8 +22,8 @@ var app = new Vue({
         },
         calculateTotalTime: function () {
             let temp = new Date();
-            this.finTime = temp - this.startTime;
-            
+            let temp2 = temp - this.startTime;
+            this.finTime = temp2/1000;
         },
         resetTest: function () {
             this.finTime = "";
